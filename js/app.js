@@ -41,3 +41,45 @@ pike.render= function(){
 
 pike.dailyTotal();
 pike.render();
+
+var seaTac = {
+  minCustomers: 3,
+  maxCustomer: 24,
+  avgCookiesSold: 1.2,
+  id: 'ulSeaTac',
+  cookiesPerHour:[],
+
+  totalCookies: 0,
+  hourlyCustomer: function (min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  },
+};
+
+for ( i=0; i<hours.length; i++) {
+  seaTac.cookiesPerHour.push(Math.ceil(seaTac.hourlyCustomer(seaTac.minCustomers, seaTac.maxCustomer)*seaTac.avgCookiesSold));
+}
+
+seaTac.dailyTotal = function(){
+  for(var i=0; i<this.cookiesPerHour.length; i++){
+    seaTac.totalCookies += this.cookiesPerHour[i];
+  }
+};
+
+seaTac.render= function(){
+    // Vinicio - ok so line 70 is the one that's not working. As soon as this line
+    // runs, we get a null value.
+  var referenceUl = document.getElementById(this.id);
+  for(var i = 0; i<this.cookiesPerHour.length; i++){
+
+    var liElement = document.createElement('li');
+
+    liElement.textContent = `at ${hours[i]} we sold ${this.cookiesPerHour[i]}.`;
+
+    referenceUl.append(liElement);
+  }
+  liElement.textContent = `We sold a total of ${seaTac.totalCookies}`;
+  referenceUl.append(liElement);
+};
+
+seaTac.dailyTotal();
+seaTac.render();
