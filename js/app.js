@@ -53,11 +53,17 @@ function StoreSales(minimumCustomers, maximumCustomers, averageCookiesSold, id) 
 
 function renderHeader() {
   var trHead = document.createElement('tr');
+  var tdElement = document.createElement('td');
+  tdElement.textContent = 'Time of Sale';
+  trHead.append(tdElement);
   for(var i = 0; i < hours.length; i++){
     var thElement = document.createElement('th');
     thElement.textContent = (hours[i]);
     trHead.append(thElement);
   }
+  var tdTotalHead = document.createElement('td');
+  tdTotalHead.textContent = 'Grand totals';
+  trHead.append(tdTotalHead);
   var referenceTable = document.getElementById('cookie-table');
   referenceTable.append(trHead);
 }
@@ -72,6 +78,23 @@ function footerCalculator(){
     grandTotal += hourlyTotal;
     hourlyTotalsArray[i] = hourlyTotal;
   }
+}
+
+function renderFooter() {
+  var trFoot = document.createElement('tr');
+  var tdElement = document.createElement('td');
+  tdElement.textContent = 'Hourly totals';
+  trFoot.append(tdElement);
+  for(var i = 0; i < hourlyTotalsArray.length; i++){
+    var thElement = document.createElement('td');
+    thElement.textContent = (hourlyTotalsArray[i]);
+    trFoot.append(thElement);
+  }
+  var tdTotalFoot = document.createElement('td');
+  tdTotalFoot.textContent = (grandTotal);
+  trFoot.append(tdTotalFoot);
+  var referenceTable = document.getElementById('cookie-table');
+  referenceTable.append(trFoot);
 }
 
 renderHeader();
@@ -90,4 +113,4 @@ capHill.dailyStats();
 alki.dailyStats();
 
 footerCalculator();
-
+renderFooter();
