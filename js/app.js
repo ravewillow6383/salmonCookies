@@ -1,7 +1,10 @@
 'use strict';
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var allStores = [];
 var referenceTable = document.getElementById('cookie-table');
+var grandTotal = 0;
+var hourlyTotalsArray = [];
 
 function StoreSales(minimumCustomers, maximumCustomers, averageCookiesSold, id) {
   this.minimumCustomers = minimumCustomers;
@@ -10,6 +13,8 @@ function StoreSales(minimumCustomers, maximumCustomers, averageCookiesSold, id) 
   this.id = id;
   this.cookiesSoldPerHour = [],
   this.totalCookies = 0;
+
+  allStores.push(this);
 
   this.hourlyCustomer = function (min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -57,8 +62,19 @@ function renderHeader() {
   referenceTable.append(trHead);
 }
 
-renderHeader();
 
+function footerCalculator(){
+  for(var i = 0; i < hours.length; i++){
+    var hourlyTotal = 0;
+    for(var j = 0; j < allStores.length; j++){
+      hourlyTotal += allStores[j].cookiesSoldPerHour[i];
+    }
+    grandTotal += hourlyTotal;
+    hourlyTotalsArray[i] = hourlyTotal;
+  }
+}
+
+renderHeader();
 
 var pike = new StoreSales(23, 65, 6.3, 'First and Pike');
 var seaTac = new StoreSales(3, 24, 1.2, 'Seatac');
@@ -72,3 +88,6 @@ seaTac.dailyStats();
 seaCenter.dailyStats();
 capHill.dailyStats();
 alki.dailyStats();
+
+footerCalculator();
+
