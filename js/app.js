@@ -68,7 +68,6 @@ function renderHeader() {
   referenceTable.append(trHead);
 }
 
-
 function footerCalculator(){
   for(var i = 0; i < hours.length; i++){
     var hourlyTotal = 0;
@@ -93,7 +92,7 @@ function renderFooter() {
   var tdTotalFoot = document.createElement('td');
   tdTotalFoot.textContent = (grandTotal);
   trFoot.append(tdTotalFoot);
-  var referenceTable = document.getElementById('cookie-table');
+  var referenceTable = document.getElementById('footer');
   referenceTable.append(trFoot);
 }
 
@@ -114,3 +113,26 @@ alki.dailyStats();
 
 footerCalculator();
 renderFooter();
+
+function addNewStore(event){
+  event.preventDefault();
+  console.log('Let\'s add a new location!');
+
+  var newStore = event.target.newstorename.value;
+  var newMinimumCustomers = event.target.minimumcustomers.value;
+  var newMaximumCustomers = event.target.maximumcustomers.value;
+  var newAverageSales = event.target.averagecookiessold.value;
+
+  var newStoreAdd = new StoreSales(newMinimumCustomers, newMaximumCustomers, newAverageSales, newStore);
+
+  newStoreAdd.dailyStats();
+
+  var referenceFooter = document.getElementById('footer');
+  referenceFooter.textContent='';
+  grandTotal = 0;
+  footerCalculator();
+  renderFooter();
+}
+
+var cookieFormReference = document.getElementById('cookieform');
+cookieFormReference.addEventListener('submit', addNewStore);
