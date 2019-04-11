@@ -1,3 +1,41 @@
+* {
+    border: solid;
+}
+
+main, nav{
+    width: 1500px;
+    background-color:rgb(158, 107, 68);
+}
+div{
+    width: 1500px;
+    height: 400px;
+    background-image: url(http://www.seekgif.com/download/use-this-dark-red-background-14523); background-repeat: repeat;
+}
+#title {
+    position:absolute;
+    top: 235px;
+    left: 650px;
+    font-family: 'Dokdo', cursive;
+    color: white;
+    font-size: 120px;
+}
+
+nav ul li {
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Dokdo', cursive;
+    color: white;
+    font-size: 25px;
+    padding: 30px;
+}
+
+div img{
+    position: absolute;
+    bottom: 520px;
+    left: 50px;
+    transform: rotate(345deg);
+}
+
 table, tr, td {
     border:solid;
 }
