@@ -68,7 +68,6 @@ function renderHeader() {
   referenceTable.append(trHead);
 }
 
-
 function footerCalculator(){
   for(var i = 0; i < hours.length; i++){
     var hourlyTotal = 0;
@@ -125,9 +124,15 @@ function addNewStore(event){
   var newAverageSales = event.target.averagecookiessold.value;
 
   var newStoreAdd = new StoreSales(newMinimumCustomers, newMaximumCustomers, newAverageSales, newStore);
+
   newStoreAdd.dailyStats();
+
+  var referenceFooter = document.getElementById('footer');
+  referenceFooter.textContent='';
+  grandTotal = 0;
+  footerCalculator();
+  renderFooter();
 }
 
 var cookieFormReference = document.getElementById('cookieform');
 cookieFormReference.addEventListener('submit', addNewStore);
-
