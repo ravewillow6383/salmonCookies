@@ -5,6 +5,9 @@ main, nav{
     margin: 0 auto;
     z-index: 1;
 }
+main{
+    height:1500px;
+}
 body{
     width:90%;
     background-image: url(https://cdn.pixabay.com/photo/2018/03/12/14/50/wallpaper-3219829_960_720.jpg); background-repeat: repeat;
@@ -26,7 +29,6 @@ div{
 }
 
 nav ul li {
-    /* display: inline-block; */
     vertical-align: top;
     font-family: 'Dokdo', cursive;
     color: white;
@@ -80,11 +82,13 @@ h2{
 main ul li{
     display: inline-block;
     box-sizing: content-box;
+    height:150px;
     clear: both;
     width: 450px;
     background-color:rgba(255,255,51,0.2);
     border:double; 
     border-width: 5px;
+    content: 8px;
 }
 p img{
     width: 20%;
@@ -112,7 +116,7 @@ header{
     border-width:3px;
 }
 #first-box{
-    margin-left: 2.2%;
+    margin-left: 5%;
     margin-right: 10px;
 }
 #second-box{
