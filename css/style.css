@@ -1,7 +1,7 @@
 
 main, nav{
     width: 100%px;
-    background-color:rgb(158, 107, 68);
+    background-color:rgba(158, 107, 68, .7);
     margin: 0 auto;
     z-index: 1;
 }
@@ -50,13 +50,8 @@ table, tr, td {
     font-family: 'Source Code Pro', monospace;
 }
 
-td{
+td, label {
     padding: 10px;
-}
-
-form{
-    border:groove;
-    
 }
 h1 {
     font-size: 50px;
@@ -137,20 +132,18 @@ header{
     margin-right:25px;
 }
 form {
-    position: absolute;
-    box-align: center;
     width:500px;
     height:250px;
     background-color:rgba(78, 56, 10, 0.7);
     margin-left:550px;
     margin-top:100px;
-    bottom:200;
     color: beige;
     background-color: black;
     font-family: 'Source Code Pro', monospace;
     text-align: center;
     font-size: 20px;
     padding: 15px;
+    float: right;
 }
 article{
     margin-bottom: 150px;
@@ -167,7 +160,7 @@ article{
 }
 table{
     position: absolute;
-    right:500px;
+    right:800px;
     color: beige;
     background-color: black;
     font-family: 'Source Code Pro', monospace;
