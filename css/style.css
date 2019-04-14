@@ -143,3 +143,44 @@ footer img{
     width:15%;
     display:inline-block;
 }
+form {
+    position: absolute;
+    box-align: center;
+    width:500px;
+    height:250px;
+    background-color:rgba(78, 56, 10, 0.7);
+    margin-left:550px;
+    margin-top:100px;
+    left:800px;
+    color: #ca9966;
+    background-color: black;
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+    font-size: 20px;
+    padding: 15px;
+}
+table{
+    position:fixed;
+    right:650px;
+    color: #ca9966;
+    background-color: black;
+    font-family: 'Source Code Pro', monospace;
+    padding: 10px;
+    margin-top:25px;
+    z-index: 1;
+}
+#formpic{
+    position: fixed;
+    transform: rotate(90deg);
+    bottom: 500px;
+    right:1400px;
+}
+h1 {
+    font-size: 50px;
+    color: white;
+    background-color: black; 
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+    padding: 10px;
+    color: #ca9966;
+}
