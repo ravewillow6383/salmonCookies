@@ -136,3 +136,26 @@ function addNewStore(event){
 
 var cookieFormReference = document.getElementById('cookieform');
 cookieFormReference.addEventListener('submit', addNewStore);
+
+var greenButton = document.getElementById('green');
+var redButton = document.getElementById('red');
+var clearButton = document.getElementById('clear');
+
+function onGreenButtonClick() {
+  event.preventDefault();
+  var referencTable = document.getElementById('cookie-table');
+  referencTable.setAttribute('class', 'green');
+}
+function onRedButtonClick() {
+  event.preventDefault();
+  var referenceTable = document.getElementById('cookie-table');
+  referenceTable.setAttribute('class', 'red');
+}
+function onClearButtonClick() {
+  var referencTable = document.getElementById('cookie-table');
+  referencTable.removeAttribute('class');
+}
+
+greenButton.addEventListener('click', onGreenButtonClick);
+redButton.addEventListener('click', onRedButtonClick);
+clearButton.addEventListener('click', onClearButtonClick);
