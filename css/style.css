@@ -23,7 +23,7 @@ header div{
 }
 div img{
     position: absolute;
-    bottom: 650px;
+    bottom: 600px;
     left: 70px;
     transform: rotate(340deg);
 }
