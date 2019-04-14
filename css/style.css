@@ -82,7 +82,7 @@ p img{
     margin-right: 30px;
     box-sizing: border-box;
     border: solid;
-    border: black;
+    border: #ca9966;
     border-width: 5px;
     padding:10px;
 }
