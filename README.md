@@ -197,3 +197,21 @@ Validate your html through HTML5 validation.
 Confirm that your code is following the single responsibility rule. Each function should only do one thing, with the capability to break it out further as needed.
 
 
+## Day 04
+
+Continue working on the functionality of your sales.html page if you do not have it working 100% yet, including the row of totals across the bottom.
+
+
+Pat has provided you 7 additional images that they would like to see on the home page of the site. These images are located in your daily class GitHub repo: class-09/lab-b/assets/.
+
+
+Your public-facing index.html page should include the following:
+
+
+locations with addresses,
+
+
+* hours open
+* contact information
+* Anything else you feel neccesary.
+* Feel free to make this information up. Get creative, have fun, but remember to be professional.
