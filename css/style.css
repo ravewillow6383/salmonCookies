@@ -6,7 +6,7 @@ body{
     background-image: url(https://cdn.pixabay.com/photo/2018/03/12/14/50/wallpaper-3219829_960_720.jpg); background-repeat: repeat;
 }
 header div{
-    width: 90%px;
+    width: 1130px;
     height: 300px;
     background-image: url(http://www.seekgif.com/download/use-this-dark-red-background-14523); background-repeat: repeat;
     clear: both;
@@ -56,6 +56,8 @@ main ul li{
     color: #ca9966;  
 } 
 #second-box{
+    display: inl;
+
     margin-left:50px;
 }   
 article{
